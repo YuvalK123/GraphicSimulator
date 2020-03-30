@@ -1,0 +1,17 @@
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\bin\Debug\map.exe.config
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\bin\Debug\map.exe
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\bin\Debug\map.pdb
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map.csprojAssemblyReference.cache
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\MainWindow.g.cs
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\App.g.cs
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map_MarkupCompile.cache
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map_MarkupCompile.lref
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\MainWindow.baml
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map.g.resources
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map.Properties.Resources.resources
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map.csproj.GenerateResource.cache
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map.exe
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map.pdb
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\Yuval\Documents\Bar Ilan\שנה ב\advanced programming 2\ex1\mapComponent\map\obj\Debug\map.csproj.CopyComplete
