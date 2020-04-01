@@ -21,12 +21,13 @@ namespace ex1
     public partial class MainWindow : Window
     {
         ViewModel vm;
+
         public MainWindow()
         {
             InitializeComponent();
-            vm = new ViewModel(new SimulatorModel());
+            vm = new ViewModel(new SimulatorModel(),this);
             DataContext = vm;
-            Joystick.DataContext = vm;
+            //Joystick.DataContext = vm;
         }
 
         private void Joystick_Loaded(object sender, RoutedEventArgs e)

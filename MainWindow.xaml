@@ -8,24 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="453" Width="828">
     <Grid>
-        <Canvas>
-            <Canvas Height="100" Width="100" Top="100" Left="500">
-                <Controls:Joystick x:Name ="Joystick" Loaded="Joystick_Loaded" Canvas.Left="-60" Width="407" Canvas.Top="-92" Height="350"/>
-            </Canvas>
-            <Canvas Height="100" Width="100" Top="10" Left="500">
-
-                <TextBox HorizontalAlignment="Left" Text="indicated-heading-deg" FontSize="20" FontFamily="Bodoni MT Black" Canvas.Left="-480" Canvas.Top="29"/>
-            </Canvas>
-
-
-            <Slider Name="thorttle" Maximum="1" Minimum="-1" Value="{Binding VM_Throttle}" Background="Black" Width="300" Canvas.Left="500" Canvas.Top="369" />
-            <Slider Name="balance" Maximum="1" Minimum="-1" Value="{Binding VM_Balance}" Background="Black" Width="300" Canvas.Left="500" Canvas.Top="396" />
-            <TextBox x:Name="throttleValue" Height="23" Canvas.Left="328" TextWrapping="Wrap" Text="{Binding ElementName=thorttle,Path=Value}" Canvas.Top="364" Width="120"/>
-            <TextBox Height="23" Canvas.Left="328" TextWrapping="Wrap" Canvas.Top="396" Width="120" Text="{Binding ElementName=balance,Path=Value}"/>
-            <TextBox Height="23" Canvas.Left="294" TextWrapping="Wrap" Text="{Binding ElementName=Joystick,Path=knobPosition.Y}" Canvas.Top="159" Width="120"/>
-
-
-        </Canvas>
+        <Controls:MainJoystick x:Name="MainJoystick"></Controls:MainJoystick>
 
     </Grid>
 </Window>

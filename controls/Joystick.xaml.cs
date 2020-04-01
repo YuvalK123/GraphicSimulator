@@ -6,14 +6,54 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
+using System.ComponentModel;
 
 namespace ex1.controls
 {
-    public partial class Joystick : UserControl
+    public partial class Joystick : UserControl,INotifyPropertyChanged
     {
         public Joystick()
         {
             InitializeComponent();
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(string propName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+            }
+
+        }
+
+        private double _rudder;
+        private double _elevator;
+        public double rudder
+        {
+            set
+            {
+                _rudder = value;
+                NotifyPropertyChanged("rudder");
+            }
+            get
+            {
+                return _rudder;
+            }
+        }
+
+        public double elevator
+        {
+            set
+            {
+                _elevator = value;
+                NotifyPropertyChanged("elevator");
+            }
+            get
+            {
+                return _elevator;
+            }
         }
 
         public Point MousewDownLocation;
@@ -38,11 +78,9 @@ private void Knob_MouseDown(object sender, System.Windows.Input.MouseButtonEvent
                 {
                     knobPosition.X = x;
                     knobPosition.Y = y;
-                    Console.WriteLine("rudder:");
-                    Console.WriteLine(x / (innerCircle.Width / 2));
-                    Console.WriteLine("elevator:");
-                    Console.WriteLine(y / (innerCircle.Width / 2));
-                    
+                    rudder = Math.Round(x / (innerCircle.Width / 2),2);
+                    elevator = Math.Round(y / (innerCircle.Height / 2), 2) * (-1);
+
                 }
             }
         }
@@ -53,6 +91,8 @@ private void Knob_MouseDown(object sender, System.Windows.Input.MouseButtonEvent
             //animation??
             knobPosition.X = 0;
             knobPosition.Y = 0;
+            rudder = 0;
+            elevator = 0;
             Knob.ReleaseMouseCapture();
 
         }
