@@ -27,7 +27,7 @@ namespace ex1
             InitializeComponent();
             vm = new ViewModel(new SimulatorModel(),this);
             DataContext = vm;
-            Joystick.DataContext = vm;
+            //Joystick.DataContext = vm;
         }
 
         private void Joystick_Loaded(object sender, RoutedEventArgs e)

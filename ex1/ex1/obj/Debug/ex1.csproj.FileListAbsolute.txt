@@ -15,3 +15,5 @@ C:\Users\israe\OneDrive\שולחן העבודה\מדעי המחשב\תכנות �
 C:\Users\israe\OneDrive\שולחן העבודה\מדעי המחשב\תכנות מתקדם 2\ex1\ex1\obj\Debug\controls\Joystick.baml
 C:\Users\israe\OneDrive\שולחן העבודה\מדעי המחשב\תכנות מתקדם 2\ex1\ex1\obj\Debug\controls\Joystick.g.cs
 C:\Users\israe\OneDrive\שולחן העבודה\מדעי המחשב\תכנות מתקדם 2\ex1\ex1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\israe\OneDrive\שולחן העבודה\מדעי המחשב\תכנות מתקדם 2\ex1\ex1\obj\Debug\controls\MainJoystick.g.cs
+C:\Users\israe\OneDrive\שולחן העבודה\מדעי המחשב\תכנות מתקדם 2\ex1\ex1\obj\Debug\controls\MainJoystick.baml

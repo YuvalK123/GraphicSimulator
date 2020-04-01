@@ -55,12 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="controls\MainJoystick.xaml.cs">
+      <DependentUpon>MainJoystick.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ISimulatorModel.cs" />
     <Compile Include="SimulatorModel.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="controls\Joystick.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\MainJoystick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
