@@ -1,0 +1,39 @@
+﻿<Window x:Class="Simulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Simulator.Controls"
+        xmlns:steerings="clr-namespace:Simulator.Controls.Steerings"
+        xmlns:joystick="clr-namespace:Simulator.Controls.Joystick"
+        xmlns:map="clr-namespace:Simulator.Controls.Map"
+        xmlns:local="clr-namespace:Simulator"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1333">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <map:Map x:Name="map" Height="240"/>
+        </Viewbox>
+        <Viewbox Grid.Row="0" Grid.Column="1" Height="100" Width="{Binding Width}">
+            <controls:Client x:Name="c"/>
+        </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="1" Height="200" Margin="602.375,0,72,111.25" Grid.ColumnSpan="2" >
+            <steerings:Steerings x:Name="steerings" Width="921.412"  />
+        </Viewbox>
+        <joystick:MainJoystick x:Name="joystick" Grid.Column="1" Grid.Row="1" Margin="571.375,225.247,0,86.003" HorizontalAlignment="Left" Width="701.814" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+    </Grid>
+</Window>
