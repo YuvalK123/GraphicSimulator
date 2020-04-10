@@ -5,14 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Simulator
 {
@@ -24,11 +17,16 @@ namespace Simulator
         public MainWindow()
         {
             InitializeComponent();
-            Client client = new Client(5402,"127.0.0.1");
-            new Task(()=>client.server()).Start();
-            steerings.InitSteerings(ref client);
-            map.setClient(ref client);
+            setComponentsToClient();
         }
-
+        private void setComponentsToClient()
+        {
+            c.connect += map.connect;
+            c.connect += joystick.connect;
+            c.connect += steerings.connect;
+            c.disconnect += map.disconnect;
+            c.disconnect += joystick.disconnect;
+            c.disconnect += steerings.disconnect;
+        }
     }
 }
