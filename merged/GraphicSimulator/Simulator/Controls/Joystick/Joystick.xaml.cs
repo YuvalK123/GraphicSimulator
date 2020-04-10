@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 using System.ComponentModel;
 
 namespace Simulator.Controls.Joystick
@@ -40,32 +40,15 @@ namespace Simulator.Controls.Joystick
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
 
-        private double _rudder;
-        private double _elevator;
-        public double rudder
+        public void connect(Client c)
         {
-            set
-            {
-                _rudder = value;
-                NotifyPropertyChanged("rudder");
-            }
-            get
-            {
-                return _rudder;
-            }
+            //vm.setClient(c);
+            //vm.start();
         }
 
-        public double elevator
+        public void disconnect(Client c)
         {
-            set
-            {
-                _elevator = value;
-                NotifyPropertyChanged("elevator");
-            }
-            get
-            {
-                return _elevator;
-            }
+            //vm.stop();
         }
 
 
@@ -73,6 +56,10 @@ namespace Simulator.Controls.Joystick
         public Point MousewDownLocation;
         private void Knob_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            //Stop the mouse up animation.
+            Storyboard sb = (Storyboard)Knob.FindResource("CenterKnob");
+            sb.Stop();
+
             if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
             {
                 MousewDownLocation = e.GetPosition(this);
@@ -91,11 +78,13 @@ namespace Simulator.Controls.Joystick
                 //check if the knob is out of border or not
                 if (Math.Sqrt(x * x + y * y) < innerCircle.Width / 2)
                 {
+                    //change x and y position
                     knobPosition.X = x;
                     knobPosition.Y = y;
-                    rudder = Math.Round(x / (innerCircle.Width / 2), 2);
-                    elevator = Math.Round(y / (innerCircle.Height / 2), 2) * (-1);
-                    vm.moveJoystick(_rudder, _elevator);
+                    // standardize the rudder and elevator value between -1 to 1.
+                    double rudder = Math.Round(x / (innerCircle.Width / 2), 2);
+                    double elevator = Math.Round(y / (innerCircle.Height / 2), 2) * (-1);
+                    vm.moveJoystick(rudder, elevator);
 
                 }
             }
@@ -103,13 +92,12 @@ namespace Simulator.Controls.Joystick
 
         private void Knob_MouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            //return the start position
-            //animation??
-            knobPosition.X = 0;
-            knobPosition.Y = 0;
-            rudder = 0;
-            elevator = 0;
-            vm.moveJoystick(_rudder, _elevator);
+            //start the animation (x,y=0)
+            Storyboard sb = (Storyboard)Knob.FindResource("CenterKnob");
+            sb.Begin();
+            double rudder = 0;
+            double elevator = 0;
+            vm.moveJoystick(rudder, elevator);
             Knob.ReleaseMouseCapture();
             
         }

@@ -25,6 +25,12 @@ namespace Simulator.Controls.Joystick
             VM_rudder = rudd;
             VM_elevator = elev;
         }
+        public void moveSlider(double throttle, double ailerion)
+        {
+            model.moveSlider(throttle, ailerion);
+            VM_throttle = throttle;
+            VM_ailerion = ailerion;
+        }
 
         public void setVM(View v, ref JoystickModel m)
         {
@@ -36,15 +42,29 @@ namespace Simulator.Controls.Joystick
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
+        public void setClient(Client c)
+        {
+            model.setClient(ref c);
+        }
+        public void start()
+        {
+            model.start();
+        }
+        public void stop()
+        {
+            model.stopConnection();
+        }
 
         private double _VM_rudder;
         private double _VM_elevator;
+        private double _VM_throttle;
+        private double _VM_ailerion;
         public double VM_rudder
         {
 
             get
             {
-                return _VM_rudder;
+                return model.rudder;
             }
             set
             {
@@ -63,7 +83,33 @@ namespace Simulator.Controls.Joystick
             }
             get
             {
-                return _VM_elevator;
+                return model.elevator;
+            }
+        }
+
+        public double VM_throttle
+        {
+            set
+            {
+                _VM_throttle = value;
+                NotifyPropertyChanged("VM_throttle");
+            }
+            get
+            {
+                return model.throttle;
+            }
+        }
+
+        public double VM_ailerion
+        {
+            set
+            {
+                _VM_ailerion = value;
+                NotifyPropertyChanged("VM_ailerion");
+            }
+            get
+            {
+                return model.ailerion;
             }
         }
 
